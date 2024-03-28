@@ -1,7 +1,7 @@
 
 ################ Lecture des fichier csv regrouper en un Dataframe ###################
 #Mettre le bon chemin
-direction <- "C:/Users/Xavier/Documents/Universit? Sherbrooke/H2024/M?thode computationnelle/Projet/acoustique_oiseaux"
+direction <- "C:/Users/Xavier/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/oiseaux_test/Data"
 direction<-"C:/Users/leaga/Documents/UdeS/H24/Prog/projet"
 direction<-"~/Library/CloudStorage/OneDrive-Personnel/BIO500/version2_crea_bd/acoustique_oiseaux"
 
@@ -27,19 +27,13 @@ data.cor <- correction.bird(data)
 ################# Changement de type et de format de données des colonnes (quand nécessaire) ######################
 
 source("format_col.R")
-data.comp <- type.format.col(data.cor)
+data.final <- type.format.col(data.cor)
 
 
 ################# Vérification des données final ####################
 
 source("verif_data.R")
-results.fin <- verif.data(data.comp)
-
-# corrige un 2e fois puisque il y a encre des duplication qui n'ont pas été corrigé
-data.final <- correction.bird(data.comp)
-
-# Vérification de la 2e correction
-results.final <- verif.data(data.final)
+results.fin <- verif.data(data.final)
 
 
 ################# Création des diff tables ######################
@@ -115,7 +109,5 @@ table.obs <-
 dbSendQuery(con,table.obs)
 dbWriteTable(con,append=TRUE,name="observations",value=obs,row.names=FALSE)
 
-#Corrections pour les noms scientifiques qui se répètent et qui créer un problème dans la table especes
-#test<- unique(esp$valid_scientific_name)
-#test # ANATIDAE, DRYOBATES PUBESCENS, PASSERIFORMES, VIREO
+
 
