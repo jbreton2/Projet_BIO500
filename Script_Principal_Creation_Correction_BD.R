@@ -109,5 +109,31 @@ table.obs <-
 dbSendQuery(con,table.obs)
 dbWriteTable(con,append=TRUE,name="observations",value=obs,row.names=FALSE)
 
+# Requetes testant si les tables fonctionnent bien (* = tous les champs d'une tables)
+
+sql_requete <- "
+  SELECT *
+  FROM especes;"
+
+test1 <- dbGetQuery(con, sql_requete)
+head(test1)
+
+sql_requete <- "
+  SELECT *
+  FROM sites;"
+test2 <- dbGetQuery(con, sql_requete)
+head(test2)
+
+sql_requete <- "
+  SELECT *
+  FROM temps;"
+test3 <- dbGetQuery(con, sql_requete)
+head(test3)
+
+sql_requete <- "
+  SELECT *
+  FROM observations;"
+test4 <- dbGetQuery(con, sql_requete)
+head(test4)
 
 
