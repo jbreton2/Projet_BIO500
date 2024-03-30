@@ -2,7 +2,7 @@
 ################ Lecture des fichier csv regrouper en un Dataframe ###################
 #Mettre le bon chemin
 direction <- "C:/Users/Xavier/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/oiseaux_test/Data"
-direction<-"C:/Users/leaga/Documents/UdeS/H24/Prog/projet"
+direction<-"C:/Users/leaga/Documents/UdeS/H24/Prog/projet/oiseaux_test/Data"
 direction<-"~/Library/CloudStorage/OneDrive-Personnel/BIO500/version2_crea_bd/acoustique_oiseaux"
 
 source("read_all_csv.R")
@@ -53,7 +53,7 @@ con <- dbConnect(SQLite(), dbname="oiseaux.db")
 #Création table d'espèces
 table.esp<-  
 "CREATE TABLE especes (
-  valid_scientific_name         VARCHAR(50) PRIMARY KEY,
+  valid_scientific_name         VARCHAR(50) PRIMARY KEY NOT NULL,
   rank                          VARCHAR(50),
   vernacular_en                 VARCHAR(50),
   vernacular_fr                 VARCHAR(50),
@@ -73,7 +73,7 @@ dbSendQuery(con,table.esp)
 table.sites<-
 "CREATE TABLE sites (
   site_id                       INTEGER PRIMARY KEY NOT NULL,
-  lat                           REAL,
+  lat                           REAL CHECK(lat >=45 & <=63),
   SCRS                          INTEGER
 );"
 dbSendQuery(con,table.sites)
