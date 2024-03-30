@@ -12,6 +12,7 @@ source("read_all_csv.R")
 source("correction_bird.R")
 source("format_col.R")
 source("function_clef.R")
+source("table_sql.R")
 
 
 # Pipeline
@@ -55,6 +56,11 @@ list(
   tar_target(    # Création table Observations
     name = obs,
     command = clef_obs(data.final, time)
+  ),
+  
+  tar_target(
+    name = con,
+    command = table.sql(esp, site, time, obs)
   )
 )
 
