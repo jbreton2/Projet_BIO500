@@ -30,7 +30,7 @@ source("format_col.R")
 data.final <- type.format.col(data.cor)
 
 
-################# Vérification des données final ####################
+################# Vérification finale des données  ####################
 
 source("verif_data.R")
 results.fin <- verif.data(data.final)
