@@ -58,8 +58,8 @@ list(
     command = clef_obs(data.final, time)
   ),
   
-  tar_target(
-    name = con,
+  tar_target(     #Création base de données
+    name = con,   
     command = table.sql(esp, site, time, obs)
   )
 )
