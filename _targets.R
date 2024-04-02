@@ -20,7 +20,7 @@ list(
   
   tar_target(    # Établissement du path pour lire les données brutes
     name = path,
-    command = "C:/Users/Xavier/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/oiseaux_test/Data"
+    command = "Data"
   ), 
   
   tar_target(    # Lecture des données et combiner en un dataframe
