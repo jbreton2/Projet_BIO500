@@ -1,7 +1,7 @@
 
 ################ Lecture des fichier csv regrouper en un Dataframe ###################
 #Mettre le bon chemin
-direction <- "C:/Users/Xavier/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/oiseaux_test/Data"
+direction <- "C:/Users/Xavier/OneDrive - USherbrooke/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/oiseaux_test/Data"
 direction<-"C:/Users/leaga/Documents/UdeS/H24/Prog/projet/oiseaux_test/Data"
 direction<-"~/Library/CloudStorage/OneDrive-Personnel/BIO500/version2_crea_bd/acoustique_oiseaux"
 
