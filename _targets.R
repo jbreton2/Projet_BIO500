@@ -64,7 +64,8 @@ list(
   )
 )
 
-
+#1.fonction des analyses de donnees
+#2.tar.render pour ficher rmarkdown
 
 
 
