@@ -1,7 +1,7 @@
 
 ################ Lecture des fichier csv regrouper en un Dataframe ###################
 #Mettre le bon chemin
-direction <- "C:/Users/Xavier/OneDrive - USherbrooke/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/oiseaux_test/Data"
+direction <- "C:/Users/Xavier/Documents/Université Sherbrooke/H2024/Méthode computationnelle/Projet/acoustique_oiseaux/Projet_BIO500/Data"
 direction<-"C:/Users/leaga/Documents/UdeS/H24/Prog/projet/oiseaux_test/Data"
 direction<-"~/Library/CloudStorage/OneDrive-Personnel/BIO500/version2_crea_bd/acoustique_oiseaux"
 
@@ -45,13 +45,22 @@ site<-clef_site(data.final)
 obs<-clef_obs(data.final, time)
 
 
-#################Création base de données SQL####################
+################# Création base de données SQL ####################
 
 source("table_sql.R")
 con <- table.sql(esp, site, time, obs)
 
 
-#################################################################
+################# Création de table pour richesse spécifique ####################
+
+source("fonct_request_rich_sp.R")
+richesse.sp <-table.rich.sp(con)
+
+# test avec un plot simple
+plot(richesse.sp$lat, richesse.sp$richesse_sp)
+
+
+###############################################################
 
 # Requetes testant si les tables fonctionnent bien (* = tous les champs d'une tables)
 
