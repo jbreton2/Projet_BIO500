@@ -24,7 +24,7 @@ table.rich.sp <- function(connexion.SQL){
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
     FROM observations
     INNER JOIN sites ON observations.site_id = sites.site_id
-    WHERE lat > 48 AND lat <= 55
+    WHERE lat > 48 AND lat <= 58
     GROUP BY sites.site_id
     ORDER BY lat ASC;"
   
@@ -34,7 +34,7 @@ table.rich.sp <- function(connexion.SQL){
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
     FROM observations
     INNER JOIN sites ON observations.site_id = sites.site_id
-    WHERE lat > 55
+    WHERE lat > 58
     GROUP BY sites.site_id
     ORDER BY lat ASC;"
   
