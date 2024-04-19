@@ -5,6 +5,8 @@
 library(targets)
 library(rmarkdown)
 library(RSQLite)
+library(vegan)
+library(tarchetypes)
 #tar_option_set(packages = c())     Pour d'autres packages
 
 # Scripts R
@@ -13,6 +15,8 @@ source("correction_bird.R")
 source("format_col.R")
 source("function_clef.R")
 source("table_sql.R")
+source("fonct_request_rich_sp.R")
+source("request_shanon.R")
 
 
 # Pipeline
@@ -61,6 +65,21 @@ list(
   tar_target(     #Création base de données
     name = con,   
     command = table.sql(esp, site, time, obs)
+  ),
+  
+  tar_target(     #Requêtes richesse spécifique
+    name = res.rich.sp,   
+    command = table.rich.sp(con)
+  ),
+  
+  tar_target(     #Requêtes indice de Shanon
+    name = inidice.shanon,   
+    command = Shanon(con)
+  ),
+  
+  tar_render(     #Rapport
+    name = rapport,         
+    path = "rapport/rapport.Rmd"
   )
 )
 
