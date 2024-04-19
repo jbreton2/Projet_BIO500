@@ -28,5 +28,7 @@ Shanon<-function(connexion.SQL){
     j<-j+1
   }
   
+  dbDisconnect(connexion.SQL)
+  
   return(indice_shanon)
 }
