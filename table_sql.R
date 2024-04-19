@@ -61,6 +61,8 @@ table.sql <- function(donnees_especes, donnees_sites, donnees_temps, donnees_obs
   dbSendQuery(con,table.obs)
   dbWriteTable(con,append=TRUE,name="observations",value=donnees_observations,row.names=FALSE)
   
+  dbDisconnect(con)
+  
   return(con)
 }
 
