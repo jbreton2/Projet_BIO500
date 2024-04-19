@@ -73,7 +73,7 @@ list(
   ),
   
   tar_target(     #Requêtes indice de Shanon
-    name = inidice.shanon,   
+    name = indice.shanon,   
     command = Shanon(con)
   ),
   
