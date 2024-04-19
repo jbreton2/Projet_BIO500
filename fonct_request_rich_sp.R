@@ -40,6 +40,8 @@ table.rich.sp <- function(connexion.SQL){
   
   rich.sp.arct <- dbGetQuery(connexion.SQL,request.rich.arct)
   
+  dbDisconnect(connexion.SQL)
+  
   return(list(global = rich.sp.tot, tempéré = rich.sp.temp, boréale = rich.sp.bor, arctique = rich.sp.arct))
 
   }
