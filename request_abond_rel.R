@@ -1,7 +1,7 @@
 
 table.abond.rel<-function(connexions.SQL){
   
-  #nb d'observations par espèces/ nb d'observations tot 
+  
   
   request.nb_obs_temp<- "
     SELECT lat, valid_scientific_name, COUNT (DISTINCT(observations.site_id)) AS nombre_observations
