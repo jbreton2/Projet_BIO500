@@ -83,13 +83,12 @@ list(
   ),
   
   tar_render(     #Rapport
-    name = rapport,         
+     name = rapport,         
     path = "rapport/rapport.Rmd"
   )
 )
 
-#1.fonction des analyses de donnees
-#2.tar.render pour ficher rmarkdown
+
 
 
 
