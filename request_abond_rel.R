@@ -2,7 +2,7 @@
 table.abond.rel<-function(connexions.SQL){
   
   
-  
+  ## est-ce que j'ai besoin des latitudes pour pouvoir les classer?
   request.nb_obs_temp<- "
     SELECT lat, valid_scientific_name, COUNT (DISTINCT(observations.site_id)) AS nombre_observations
     FROM observations
