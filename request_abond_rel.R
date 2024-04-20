@@ -44,14 +44,14 @@ table.abond.rel<-function(connexion.SQL){
       for(j in 1: nrow(nb.obs_pour_temp)) {
       abondance_relative[j,1]<-"temperee"
       abondance_relative[j,2]<-nb.obs_pour_temp[j,1] #mettre le nom des especes dans le data frame
-      abondance_relative[j,3]<-(nb.obs_pour_temp[j,2])/sum(nb.obs_pour_temp$nombre.observations)*100
+      abondance_relative[j,3]<-(nb.obs_pour_temp[j,2])/sum(nb.obs_pour_temp[,2])*100
       }
     }
     else if(i==2){
       for(t in (1+nrow(nb.obs_pour_temp)): (nrow(nb.obs_pour_bor)+nrow(nb.obs_pour_temp))) {
       abondance_relative[t,1]<-"boreale"
       abondance_relative[t,2]<-nb.obs_pour_bor[n,1] #mettre le nom des especes dans le data frame
-      abondance_relative[t,3]<-(nb.obs_pour_bor[n,2])/sum(nb.obs_pour_bor$nombre.observations)*100
+      abondance_relative[t,3]<-(nb.obs_pour_bor[n,2])/sum(nb.obs_pour_bor[,2])*100
       n <-n+1
     }
     }
@@ -60,7 +60,7 @@ table.abond.rel<-function(connexion.SQL){
       for(z in (1+nrow(nb.obs_pour_temp)+nrow(nb.obs_pour_bor)) : (nrow(nb.obs_pour_temp)+nrow(nb.obs_pour_bor)+nrow(nb.obs_pour_arct))) { 
       abondance_relative[z,1]<-"arctique"
       abondance_relative[z,2]<-nb.obs_pour_arct[h,1] #mettre le nom des especes dans le data frame
-      abondance_relative[z,3]<-(nb.obs_pour_arct[h,2])/sum(nb.obs_pour_arct$nombre.observations)*100
+      abondance_relative[z,3]<-(nb.obs_pour_arct[h,2])/sum(nb.obs_pour_arct[,2])*100
       h <-h+1
       }
    }
