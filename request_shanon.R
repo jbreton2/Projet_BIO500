@@ -1,5 +1,7 @@
 Shanon<-function(connexion.SQL){
   
+  connexion.SQL <- dbConnect(SQLite(), dbname="oiseaux.db")
+  
   request.site <- "
     SELECT observations.site_id, lat
     FROM observations
