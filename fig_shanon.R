@@ -1,8 +1,8 @@
 fig.shanon <- function(data.shanon){ 
   #points
-  plot(data_shanon$lat, data_shanon$shanon, xlab = "Latitude", ylab = "Indice de Shanon", cex=1.1)
+  plot(data.shanon$lat, data.shanon$shanon, xlab = "Latitude", ylab = "Indice de Shanon", cex=1.1)
   #modèle
-  mod.shan <-lm(shanon~lat, data=data_shanon)
+  mod.shan <-lm(shanon~lat, data=data.shanon)
   #droite de régression
   abline (mod.shan, col="red")
   #délimitations des sections géographique
