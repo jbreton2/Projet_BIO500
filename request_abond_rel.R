@@ -56,20 +56,20 @@ table.abond.rel<-function(connexions.SQL){
   abondance_relative<-data.frame(zone=" ", espece=" ",abondance_relative=0)
   for(i in k) {# boucle pour les zones
    for(j in nb.esp_total) {
-    if (i=1){
+    if (i==1){
       abondance_relative[j,1]<-"temperee"
       abondance_relative[j,2]<-nb.obs_pour_temp[valid_scientific_name[,j]] #mettre le nom des especes dans le data frame
-      abondance_relative[j,3]<-(nb.obs_pour_temp[nombre_observations[,j]])/nb.obs_total
+      abondance_relative[j,3]<-(nb.obs_pour_temp[nombre_observations[,j]])/nb.obs_total*100
     }
-    else if(i=2){
+    else if(i==2){
       abondance_relative[j,1]<-"boreale"
       abondance_relative[j,2]<-nb.obs_pour_bor[valid_scientific_name[,j]] #mettre le nom des especes dans le data frame
-      abondance_relative[j,3]<-(nb.obs_pour_bor[nombre_observations[,j]])/nb.obs_total
+      abondance_relative[j,3]<-(nb.obs_pour_bor[nombre_observations[,j]])/nb.obs_total*100
     }
     else{
       abondance_relative[j,1]<-"arctique"
       abondance_relative[j,2]<-nb.obs_pour_arct[valid_scientific_name[,j]] #mettre le nom des especes dans le data frame
-      abondance_relative[j,3]<-(nb.obs_pour_artc[nombre_observations[,j]])/nb.obs_total
+      abondance_relative[j,3]<-(nb.obs_pour_artc[nombre_observations[,j]])/nb.obs_total*100
     }
      j<-j+1
    }
