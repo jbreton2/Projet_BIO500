@@ -17,7 +17,7 @@ source("function_clef.R")
 source("table_sql.R")
 source("fonct_request_rich_sp.R")
 source("request_shanon.R")
-
+source("request_abond_rel.R")
 
 # Pipeline
 list(
@@ -75,6 +75,11 @@ list(
   tar_target(     #Requêtes indice de Shanon
     name = indice.shanon,   
     command = Shanon(con)
+  ),
+  
+  tar_target(     #Requêtes abondance relative
+    name = abondance.relative,   
+    command = table.abond.rel(con)
   ),
   
   tar_render(     #Rapport
