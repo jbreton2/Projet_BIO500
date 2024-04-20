@@ -1,6 +1,8 @@
 
 table.rich.sp <- function(connexion.SQL){
   
+  connexion.SQL <- dbConnect(SQLite(), dbname="oiseaux.db")
+  
   request.rich.tot <- "
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
     FROM observations
