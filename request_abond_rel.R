@@ -1,5 +1,5 @@
 
-table.abond.rel<-function(connexions.SQL){
+table.abond.rel<-function(connexion.SQL){
   
   
   ## est-ce que j'ai besoin des latitudes pour pouvoir les classer?
@@ -9,7 +9,7 @@ table.abond.rel<-function(connexions.SQL){
     INNER JOIN sites ON observations.site_id = sites.site_id
     WHERE lat <= 48
     GROUP BY valid_scientific_name
-    #ORDER BY valid_scientific_name
+    ORDER BY valid_scientific_name
   ; "
   
   nb.obs_pour_temp<-dbGetQuery(connexion.SQL,request.nb_obs_temp)
@@ -20,7 +20,7 @@ table.abond.rel<-function(connexions.SQL){
     INNER JOIN sites ON observations.site_id = sites.site_id
     WHERE lat > 48 AND lat <= 58
     GROUP BY valid_scientific_name
-    #ORDER BY valid_scientific_name
+    ORDER BY valid_scientific_name
   ; "
   
   nb.obs_pour_bor<-dbGetQuery(connexion.SQL,request.nb_obs_bor)
@@ -31,19 +31,18 @@ table.abond.rel<-function(connexions.SQL){
     INNER JOIN sites ON observations.site_id = sites.site_id
     WHERE lat > 58
     GROUP BY valid_scientific_name
-   #ORDER BY valid_scientific_name
-  ; "
+    ORDER BY valid_scientific_name
+    ; "
   
   nb.obs_pour_arct<-dbGetQuery(connexion.SQL,request.nb_obs_arct)
   
   request.nb_obs_tot<-"
   SELECT COUNT (observations.site_id)
   FROM observations
-  #INNER JOIN sites ON observations.site_id = sites.site_id
-  #est-ce que je peux mettre INNER JOIN?
+  INNER JOIN sites ON observations.site_id = sites.site_id
   ; "
   nb.obs_total<-dbGetQuery(connexion.SQL,request.nb_obs_tot)
-  
+  #est-ce que je peux mettre INNER JOIN?
   
   request.nb_esp_tot<-"
   SELECT COUNT(valid_scientific_name)
