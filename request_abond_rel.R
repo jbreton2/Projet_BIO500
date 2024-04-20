@@ -1,6 +1,8 @@
 
 table.abond.rel<-function(connexion.SQL){
   
+  connexion.SQL <- dbConnect(SQLite(), dbname="oiseaux.db")
+  
   request.nb_obs_temp<- "
     SELECT valid_scientific_name, COUNT (DISTINCT(observations.site_id)) AS nombre_observations
     FROM observations
