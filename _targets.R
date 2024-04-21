@@ -7,6 +7,7 @@ library(rmarkdown)
 library(RSQLite)
 library(vegan)
 library(tarchetypes)
+library(ggplot2)
 #tar_option_set(packages = c())     Pour d'autres packages
 
 # Scripts R
@@ -83,7 +84,7 @@ list(
   ),
   
   tar_render(     #Rapport
-     name = rapport,         
+    name = rapport,         
     path = "rapport/rapport.Rmd"
   )
 )
