@@ -72,5 +72,4 @@ fig.abon.rel<-function(donnees.ab.rel){
 
 }
 
-fig.abon.rel(test)
 
