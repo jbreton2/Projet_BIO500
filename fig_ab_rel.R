@@ -8,7 +8,7 @@ fig.abon.rel<-function(donnees.ab.rel){
   temp.fig <-data.frame(Zone=" ", Espèces=" ", Abondance_relative=0)
   
   for (n in 1: nrow(temperee.fin)){
-    if (sum(temp.fig[,3]) < 10) {
+    if (sum(temp.fig[,3]) < 15) {
       temp.fig[n,1]<-"temperee"
       temp.fig[n,2]<-temperee.fin[n,2]
       temp.fig[n,3]<-temperee.fin[n,3]
@@ -27,7 +27,7 @@ fig.abon.rel<-function(donnees.ab.rel){
   bor.fig <-data.frame(Zone=" ", Espèces=" ", Abondance_relative=0)
   
   for (n in 1: nrow(bor.fin)){
-    if (sum(bor.fig[,3]) < 10) {
+    if (sum(bor.fig[,3]) < 15) {
       bor.fig[n,1]<-"boreale"
       bor.fig[n,2]<-bor.fin[n,2]
       bor.fig[n,3]<-bor.fin[n,3]
@@ -46,7 +46,7 @@ fig.abon.rel<-function(donnees.ab.rel){
   arc.fig <-data.frame(Zone=" ", Espèces=" ", Abondance_relative=0)
   
   for (n in 1: nrow(arc.fin)){
-    if (sum(arc.fig[,3]) < 10) {
+    if (sum(arc.fig[,3]) < 15) {
       arc.fig[n,1]<-"arctique"
       arc.fig[n,2]<-arc.fin[n,2]
       arc.fig[n,3]<-arc.fin[n,3]
