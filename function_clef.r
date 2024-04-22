@@ -3,7 +3,6 @@
 #Unique pour chaque espèce
 clef_especes<-function(donnee){
   especes<-unique(donnee[,c(8:17)])
-  write.csv(especes, file="especes.csv")
   return(especes)
 }
 
@@ -11,7 +10,6 @@ clef_especes<-function(donnee){
 clef_site<-function(donnee){
   id<-unique(donnee[,c(1:2)])
   sites<-data.frame(id,SCRS=6622) #SCRS ou projection comme titre de la colonne
-  write.csv(sites, file="sites.csv")
   return(sites)
 }
 
@@ -19,7 +17,6 @@ clef_site<-function(donnee){
 clef_temps<-function(donnee){
   time<-unique(donnee[,c(3:5)])
   temps<-data.frame(time_id=c(1:nrow(time)),time)
-  write.csv(temps, file="temps.csv")
   return(temps)
 }
 
@@ -32,7 +29,6 @@ clef_obs<-function(donnee,temps){
   }
   obs<-data.frame(id_temps,donnee[,c(1,6,8)])
   colnames(obs)[1]<-"temps_id"
-  write.csv(obs, file="observations.csv")
   return(obs)
 }
 
