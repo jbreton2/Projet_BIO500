@@ -1,6 +1,6 @@
 fig.shanon <- function(data.shanon){ 
   #points
-  plot(data.shanon$lat, data.shanon$shanon, xlab = "Latitude", ylab = "Indice de Shanon", cex=1.1)
+  plot(data.shanon$lat, data.shanon$shanon, xlab = "Latitude", ylab = "Indice de Shanon")
   #modèle
   mod.shan <-lm(shanon~lat, data=data.shanon)
   #droite de régression
@@ -13,10 +13,9 @@ fig.shanon <- function(data.shanon){
   pente<-round(unname(coef(mod.shan)[2]), 2)
   r2 <- round(summary(mod.shan)$r.squared, 2)
   #légende
-  text(x = 60, y = 1.6, paste("R² =",r2), cex = 0.8)
-  text(x = 60, y = 1.7, paste("y =", pente, "x +", ordo), cex = 0.8)
-  text(x = 46.2, y = 3.9, paste("Tempérée"), cex = 0.8)
-  text(x = 53, y = 3.9, paste("Boréale"), cex = 0.8)
-  text(x = 60, y = 3.9, paste("Arctique"), cex = 0.8)
-  title(main = "Indice de Shanon des oiseaux observés au Québec en fonction de la latitude")
+  text(x = 60, y = 1.6, paste("R² =",r2), cex = 0.5)
+  text(x = 60, y = 1.7, paste("y =", pente, "x +", ordo), cex = 0.5)
+  text(x = 46.2, y = 3.9, paste("Tempérée"), cex = 0.5)
+  text(x = 53, y = 3.9, paste("Boréale"), cex = 0.5)
+  text(x = 60, y = 3.9, paste("Arctique"), cex = 0.5)
 }
