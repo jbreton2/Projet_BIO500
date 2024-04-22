@@ -35,9 +35,9 @@ fig.rich.sp(data_rich_sp)
 Une tendance similaire à celle précédente est observée pour l'indice de Shannon. En effet, il diminue plus la latitude augmente à un taux de 0,05. La variance est, elle aussi, plus forte dans la zone tempérée que dans les zones bioclimatiques plus nordique. La valeur minimale de l'indice de Shannon est de 1,60 et le maximum est atteint à 3,95 (Figure \ref{fig:plot2}). 
 
 ```{r figs 2, fig.cap="\\label{fig:plot2}Indice de Shannon des oiseaux observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
-source("fig_shanon.R")
-data_shanon <- tar_read("indice.shanon")
-fig.shanon(data_shanon)
+source("fig_shannon.R")
+data_shannon <- tar_read("indice.shannon")
+fig.shannon(data_shannon)
 ```
 
 Premièrement, il est possible d'observer que pour atteindre plus de 15% d'abondance relative, il faut quatre espèces ou groupes pour la zone artique, cinq pour la zone boréale et huit pour la zone tempérée. Pour l'arctique, on retrouve des membres de Acanthis, de *Passerella iliaca*, de Passeriformes et de *Zonotrichia leucophrys* présent chacun à 4,76%. Les espèces les plus présentent en zone boréale sont: *Zonotrichia albicollis* à 3,23%; *Regulus calendula* à 3,14%; *Catharus ustulatus* et *Dendroica magnolia* à 3,05% et *Dendroica coronata* à 2,71%. Finalement, la zone tempérée est principalement composée de Passeriformes (2.17%), de *Cyanocitta cristata* (1.98%), de Parulidae (1.89%), de Vireo (1.89%), de *Catharus guttatus* (1.84%), de *Zonotrichia albicollis* (1.84%), de *Seiurus aurocapilla* (1.80%) et de *Carduelis tristis* (1.75%) (Figure \ref{fig:plot3}).
