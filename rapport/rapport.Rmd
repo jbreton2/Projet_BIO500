@@ -1,0 +1,50 @@
+---
+title: "Diversité aviaire selon la zone biogéographique du Québec"
+output: pdf_document
+
+
+author: Julianne Breton, Léa Gautier-Soumis, Marie-Pier Landry et Xavier Quintal
+
+date: "2024-04-21"
+---
+**Résumé**
+
+
+## Introduction
+
+
+
+## Méthode
+
+
+
+## Résulats
+
+Pour la richesse spécifique, les valeurs vont de 9 à 75 espèces. Le Sud du Québec compte en moyenne plus d'espèces par site et plus on monte en latitude plus le nombre diminue. Le modèle linéaire estime une pente de -2,01. Il est également possible d'observer qu'il y a une plus forte variance pour la zone bioclimatique tempérée que les deux autres (Figure \ref{fig:plot1}).
+
+```{r figs 1, fig.cap="\\label{fig:plot1}Richesse spécifique aviaire observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
+source("fig_rich_sp.R")
+data_rich_sp <- tar_read("res.rich.sp")
+fig.rich.sp(data_rich_sp)
+```
+
+Une tendance similaire à celle précédente est observée pour l'indice de Shannon. En effet, il diminue plus la latitude augmente à un taux de 0,05. La variance est, elle aussi, plus forte dans la zone tempérée que dans les zones bioclimatiques plus nordique. La valeur minimale de l'indice de Shannon est de 1,60 et le maximum est atteint à 3,95 (Figure \ref{fig:plot2}). 
+
+```{r figs 2, fig.cap="\\label{fig:plot2}Indice de Shannon des oiseaux observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
+source("fig_shanon.R")
+data_shanon <- tar_read("indice.shanon")
+fig.shanon(data_shanon)
+```
+
+Premièrement, il est possible d'observer que pour atteindre plus de 15% d'abondance relative, il faut quatre espèces ou groupes pour la zone artique, cinq pour la zone boréale et huit pour la zone tempérée. Pour l'arctique, on retrouve des membres de Acanthis, de *Passerella iliaca*, de Passeriformes et de *Zonotrichia leucophrys* présent chacun à 4,76%. Les espèces les plus présentent en zone boréale sont: *Zonotrichia albicollis* à 3,23%; *Regulus calendula* à 3,14%; *Catharus ustulatus* et *Dendroica magnolia* à 3,05% et *Dendroica coronata* à 2,71%. Finalement, la zone tempérée est principalement composée de Passeriformes (2.17%), de *Cyanocitta cristata* (1.98%), de Parulidae (1.89%), de Vireo (1.89%), de *Catharus guttatus* (1.84%), de *Zonotrichia albicollis* (1.84%), de *Seiurus aurocapilla* (1.80%) et de *Carduelis tristis* (1.75%) (Figure \ref{fig:plot3}).
+
+```{r figs 3, fig.cap="\\label{fig:plot3}Abondance relative des espèces principales selon la zone biogéographique du Québec", fig.width=6, fig.height=6, echo=FALSE}
+source("fig_ab_rel.R")
+data_ab_rel <- tar_read("abondance.relative")
+fig.abon.rel(data_ab_rel)
+```
+
+## Discussion
+
+
+## Références
