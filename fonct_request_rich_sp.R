@@ -16,51 +16,10 @@ table.rich.sp <- function(connexion.SQL){
   
   rich.sp.tot <- dbGetQuery(connexion.SQL,request.rich.tot)
   
-  
-  # Même principe que la première table, mais cette fois-ci seulement pour les sites se trouvant dans la zone tempérée.
-  # La zone tempérée est délimiter (WHERE) par les sites se trouvant sous la latitude 48.
-  
-  request.rich.temp <- "
-    SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
-    FROM observations
-    INNER JOIN sites ON observations.site_id = sites.site_id
-    WHERE lat <= 48
-    GROUP BY sites.site_id
-    ORDER BY lat ASC;"
-  
-  rich.sp.temp <- dbGetQuery(connexion.SQL,request.rich.temp)
-  
-  
-  # Même principe que la première table, mais cette fois-ci seulement pour les sites se trouvant dans la zone boréale.
-  # La zone boréale est délimiter (WHERE) par les sites se trouvant au-dessus de la latitude 48 et sous la latitude 58.
-  
-  request.rich.bor <- "
-    SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
-    FROM observations
-    INNER JOIN sites ON observations.site_id = sites.site_id
-    WHERE lat > 48 AND lat <= 58
-    GROUP BY sites.site_id
-    ORDER BY lat ASC;"
-  
-  rich.sp.bor <- dbGetQuery(connexion.SQL,request.rich.bor)
-  
-  
-  # Même principe que la première table, mais cette fois-ci seulement pour les sites se trouvant dans la zone arctique.
-  # La zone arctique est délimiter (WHERE) par les sites se trouvant au-dessus de la latitude 58.
-  request.rich.arct <- "
-    SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
-    FROM observations
-    INNER JOIN sites ON observations.site_id = sites.site_id
-    WHERE lat > 58
-    GROUP BY sites.site_id
-    ORDER BY lat ASC;"
-  
-  rich.sp.arct <- dbGetQuery(connexion.SQL,request.rich.arct)
-  
   # Déconnexion
   dbDisconnect(connexion.SQL)
   
-  return(list(global = rich.sp.tot, tempéré = rich.sp.temp, boréale = rich.sp.bor, arctique = rich.sp.arct))
+  return(rich.sp.tot)
 
   }
 
