@@ -3,6 +3,10 @@ table.rich.sp <- function(connexion.SQL){
   
   connexion.SQL <- dbConnect(SQLite(), dbname="oiseaux.db")
   
+  # Création d'une table qui contient le site.ID, la latitude de chaque site et la richesse spécifique observée à chaque site.
+  # La richesse spécifique est calculé en prenant le nombre (COUNT) d'espèces différentes (DISTINCT) observée par site (GROUP BY).
+  # Finalement, pour avoir une meilleure vision des résultats dans la table, les données sont mise en ordre décroissant de latitude.
+  
   request.rich.tot <- "
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
     FROM observations
@@ -11,6 +15,10 @@ table.rich.sp <- function(connexion.SQL){
     ORDER BY lat ASC;"
   
   rich.sp.tot <- dbGetQuery(connexion.SQL,request.rich.tot)
+  
+  
+  # Même principe que la première table, mais cette fois-ci seulement pour les sites se trouvant dans la zone tempérée.
+  # La zone tempérée est délimiter (WHERE) par les sites se trouvant sous la latitude 48.
   
   request.rich.temp <- "
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
@@ -22,6 +30,10 @@ table.rich.sp <- function(connexion.SQL){
   
   rich.sp.temp <- dbGetQuery(connexion.SQL,request.rich.temp)
   
+  
+  # Même principe que la première table, mais cette fois-ci seulement pour les sites se trouvant dans la zone boréale.
+  # La zone boréale est délimiter (WHERE) par les sites se trouvant au-dessus de la latitude 48 et sous la latitude 58.
+  
   request.rich.bor <- "
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
     FROM observations
@@ -32,6 +44,9 @@ table.rich.sp <- function(connexion.SQL){
   
   rich.sp.bor <- dbGetQuery(connexion.SQL,request.rich.bor)
   
+  
+  # Même principe que la première table, mais cette fois-ci seulement pour les sites se trouvant dans la zone arctique.
+  # La zone arctique est délimiter (WHERE) par les sites se trouvant au-dessus de la latitude 58.
   request.rich.arct <- "
     SELECT observations.site_id, lat, COUNT(DISTINCT(valid_scientific_name)) AS richesse_sp
     FROM observations
@@ -42,6 +57,7 @@ table.rich.sp <- function(connexion.SQL){
   
   rich.sp.arct <- dbGetQuery(connexion.SQL,request.rich.arct)
   
+  # Déconnexion
   dbDisconnect(connexion.SQL)
   
   return(list(global = rich.sp.tot, tempéré = rich.sp.temp, boréale = rich.sp.bor, arctique = rich.sp.arct))
