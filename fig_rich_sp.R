@@ -2,10 +2,10 @@
 fig.rich.sp <- function(data.rich){ 
   
   # Figure globale
-  plot(data.rich$global$lat, data.rich$global$richesse_sp, xlab = "Latitude", ylab = "Richesse spécifique")  
+  plot(data.rich$lat, data.rich$richesse_sp, xlab = "Latitude", ylab = "Richesse spécifique")  
   
   #Modèle
-  mod.glob <-lm(richesse_sp~lat, data=data.rich$global)
+  mod.glob <-lm(richesse_sp~lat, data=data.rich)
   #droite de régression
   abline (mod.glob, col="red")
   #délimitations des sections géographique
