@@ -1,4 +1,4 @@
-Shannon<-function(){
+Shannon<-function(connexion.SQL){
   
   connexion.SQL <- dbConnect(SQLite(), dbname="oiseaux.db")
   
