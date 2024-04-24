@@ -1,5 +1,5 @@
 ---
-title: "Diversité aviaire selon la zone biogéographique du Québec"
+title: "Diversité aviaire selon le domaine bioclimatique au Québec"
 output: pdf_document
 
 
@@ -13,18 +13,18 @@ bibliography: "biblio.bib"
 
 
 ## Introduction
-
+Avec les progrès récents en matière de télédétection et de modélisation écologique, plusieurs chercheurs en profitent pour modéliser la richesse spécifique à grande échelle en fonction des variables écologiques telles que la végétation et le climat. Dans un contexte où les changements climatiques évoluent rapidement, il est intéressant de savoir comment la richesse spécifique varie dans l’espace et savoir quelles espèces se trouvent dans chaque domaine bioclimatique soit la zone tempérée, la zone boréale et la zone arctique au Québec. C’est pourquoi nous avons choisi de travailler sur ce sujet et nous tenterons de répondre à la question suivante : comment la diversité des oiseaux varie selon le domaine bioclimatique au Québec?
 
 
 ## Méthode
 
-Des relevés acoustiques des oiseaux ont été effectués de 2016 à 2019 sur des sites répartis partout au Québec. Dans le cadre de ce projet, nous comparons les trois grandes zones biogéographiques que l'on retrouve dans la province : la zone tempérée, la zone boréale et la zone arctique. La limite Nord de la zone tempérée a été fixée à une latitude de 48 et celle de la zone boréale à une valeur de 58. Ces démarcations ont été choisies à l'aide des zones de végétation du Ministère des ressources naturelles et des forêts (@noauthor_classification_nodate).
+Des relevés acoustiques des oiseaux ont été effectués de 2016 à 2019 sur des sites répartis partout au Québec. Dans le cadre de ce projet, nous comparons les trois grandes zones bioclimatiques que l'on retrouve dans la province : la zone tempérée, la zone boréale et la zone arctique. La limite Nord de la zone tempérée a été fixée à une latitude de 48 et celle de la zone boréale à une valeur de 58. Ces démarcations ont été choisies à l'aide des zones de végétation du Ministère des Ressources naturelles et des Forêts (@noauthor_classification_nodate).
 
-Afin de mesurer la biodiversité aviaire du Québec et de la comparer entre les zones biogéographiques, la richesse spécifique de chaque site a été calculée. Ensuite, L'indice de Shannon, qui prend en compte le nombre d'observations de chaque espèce, a été calculé pour bonifier la description de la biodiversité. Pour les trois zones biogéographiques, les espèces les plus abondantes qui composent au moins 15% de la communauté sont extraites afin de comparer le type d'espèces que l'on retrouve dans les trois zones. 
+Afin de mesurer la biodiversité aviaire du Québec et de la comparer entre les zones bioclimatiques, la richesse spécifique de chaque site a été calculée. Ensuite, l'indice de Shannon, qui prend en compte le nombre d'observations de chaque espèce, a été calculé pour bonifier la description de la biodiversité. Pour les trois zones bioclimatiques, les espèces les plus abondantes qui composent au moins 15% de la communauté sont extraites afin de comparer le type d'espèces que l'on retrouve dans les trois zones. 
 
 ## Résulats
 
-Pour la richesse spécifique, les valeurs vont de 9 à 75 espèces. Le Sud du Québec compte en moyenne plus d'espèces par site et plus on monte en latitude plus le nombre diminue. Le modèle linéaire estime une pente de -2,01. Il est également possible d'observer qu'il y a une plus forte variance pour la zone bioclimatique tempérée que les deux autres (Figure \ref{fig:plot1}).
+Pour la richesse spécifique, les valeurs vont de 9 à 75 espèces. Le sud du Québec compte en moyenne plus d'espèces par site et plus on monte en latitude plus le nombre diminue. Le modèle linéaire estime une pente de -2,01. Il est également possible d'observer qu'il y a une plus forte variance pour la zone bioclimatique tempérée que les deux autres (Figure \ref{fig:plot1}).
 
 ```{r figs 1, fig.cap="\\label{fig:plot1}Richesse spécifique aviaire observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
 source("fig_rich_sp.R")
@@ -32,7 +32,7 @@ data_rich_sp <- tar_read("res.rich.sp")
 fig.rich.sp(data_rich_sp)
 ```
 
-Une tendance similaire à celle précédente est observée pour l'indice de Shannon. En effet, il diminue plus la latitude augmente à un taux de 0,05. La variance est, elle aussi, plus forte dans la zone tempérée que dans les zones bioclimatiques plus nordique. La valeur minimale de l'indice de Shannon est de 1,60 et le maximum est atteint à 3,95 (Figure \ref{fig:plot2}). 
+Une tendance similaire à celle précédente est observée pour l'indice de Shannon. En effet, il diminue plus la latitude augmente à un taux de 0,05. La variance est, elle aussi, plus forte dans la zone tempérée que dans les zones bioclimatiques plus nordiques. La valeur minimale de l'indice de Shannon est de 1,60 et le maximum est atteint à 3,95 (Figure \ref{fig:plot2}). 
 
 ```{r figs 2, fig.cap="\\label{fig:plot2}Indice de Shannon des oiseaux observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
 source("fig_shannon.R")
@@ -40,7 +40,7 @@ data_shannon <- tar_read("indice.shannon")
 fig.shannon(data_shannon)
 ```
 
-Premièrement, il est possible d'observer que pour atteindre plus de 15% d'abondance relative, il faut quatre espèces ou groupes pour la zone artique, cinq pour la zone boréale et huit pour la zone tempérée. Pour l'arctique, on retrouve des membres de Acanthis, de *Passerella iliaca*, de Passeriformes et de *Zonotrichia leucophrys* présent chacun à 4,76%. Les espèces les plus présentent en zone boréale sont: *Zonotrichia albicollis* à 3,23%; *Regulus calendula* à 3,14%; *Catharus ustulatus* et *Dendroica magnolia* à 3,05% et *Dendroica coronata* à 2,71%. Finalement, la zone tempérée est principalement composée de Passeriformes (2.17%), de *Cyanocitta cristata* (1.98%), de Parulidae (1.89%), de Vireo (1.89%), de *Catharus guttatus* (1.84%), de *Zonotrichia albicollis* (1.84%), de *Seiurus aurocapilla* (1.80%) et de *Carduelis tristis* (1.75%) (Figure \ref{fig:plot3}).
+Premièrement, il est possible d'observer que pour atteindre plus de 15% d'abondance relative, il faut quatre espèces ou groupes pour la zone arctique, cinq pour la zone boréale et huit pour la zone tempérée. Pour l'arctique, on retrouve des membres de Acanthis, de *Passerella iliaca*, de Passeriformes et de *Zonotrichia leucophrys* présent chacun à 4,76%. Les espèces les plus présentent en zone boréale sont: *Zonotrichia albicollis* à 3,23%; *Regulus calendula* à 3,14%; *Catharus ustulatus* et *Dendroica magnolia* à 3,05% et *Dendroica coronata* à 2,71%. Finalement, la zone tempérée est principalement composée de Passeriformes (2.17%), de *Cyanocitta cristata* (1.98%), de Parulidae (1.89%), de Vireo (1.89%), de *Catharus guttatus* (1.84%), de *Zonotrichia albicollis* (1.84%), de *Seiurus aurocapilla* (1.80%) et de *Carduelis tristis* (1.75%) (Figure \ref{fig:plot3}).
 
 ```{r figs 3, fig.cap="\\label{fig:plot3}Abondance relative des espèces principales selon la zone biogéographique du Québec", fig.width=6, fig.height=6, echo=FALSE}
 source("fig_ab_rel.R")
