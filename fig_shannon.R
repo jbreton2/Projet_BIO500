@@ -13,7 +13,7 @@ fig.shannon <- function(data.shannon){
   pente<-round(unname(coef(mod.shan)[2]), 2)
   r2 <- round(summary(mod.shan)$r.squared, 2)
   text(x = 60, y = 1.6, paste("R² =",r2), cex = 0.5)
-  text(x = 60, y = 1.7, paste("y =", pente, "x +", ordo), cex = 0.5)
+  text(x = 60, y = 1.9, paste("y =", pente, "x +", ordo), cex = 0.5)
   #Titre zones
   text(x = 46.2, y = 3.9, paste("Tempérée"), cex = 0.5)
   text(x = 53, y = 3.9, paste("Boréale"), cex = 0.5)
