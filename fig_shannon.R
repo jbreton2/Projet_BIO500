@@ -1,6 +1,6 @@
 fig.shannon <- function(data.shannon){ 
   #points
-  plot(data.shannon$lat, data.shannon$shannon, xlab = "Latitude", ylab = "Indice de Shannon")
+  plot(data.shannon$lat, data.shannon$shannon, xlab = "Latitude", ylab = "Indice de Shannon", cex.axis = 0.8, cex.lab = 0.8,cex=0.5)
   #modèle
   mod.shan <-lm(shannon~lat, data=data.shannon)
   #droite de régression

@@ -1,8 +1,8 @@
 
 fig.rich.sp <- function(data.rich){ 
-  
+
   # Figure globale
-  plot(data.rich$lat, data.rich$richesse_sp, xlab = "Latitude", ylab = "Richesse spécifique")  
+  plot(data.rich$lat, data.rich$richesse_sp, xlab = "Latitude", ylab = "Richesse spécifique", cex.axis = 0.8, cex.lab = 0.8, cex=0.5)  
   
   #Modèle
   mod.glob <-lm(richesse_sp~lat, data=data.rich)
