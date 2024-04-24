@@ -2,15 +2,13 @@
 title: "La diversité aviaire selon le domaine bioclimatique au Québec"
 output: pdf_document
 
-
 author: Julianne Breton, Léa Gautier-Soumis, Marie-Pier Landry et Xavier Quintal
 
 date: "2024-04-24"
 
 bibliography: "biblio.bib"
 ---
-**Résumé**
-Dans ce projet, nous nous sommes intéressés à la variation de la diversité aviaire selon le domaine bioclimatique au Québec. Plusieurs analyses ont été faites pour calculer la richesse spécifique, l’indice de Shannon ainsi que la composition en espèces de chaque zone soit tempérée, boréale et arctique. Avec ces analyses, nous avons pu conclure que la zone tempérée à la plus grande diversité autant au niveau de la richesse spécifique que de l’indice de Shannon et que la zone arctique est celle avec la plus petite diversité. Nous avons aussi conclu que la composition en espèces est très différente dans chaque zone due à la grande variation de la végétation et du climat entre les zones.
+**Dans ce projet, nous nous sommes intéressés à la variation de la diversité aviaire selon le domaine bioclimatique au Québec. Plusieurs analyses ont été faites pour calculer la richesse spécifique, l’indice de Shannon ainsi que la composition en espèces de chaque zone soit tempérée, boréale et arctique. Avec ces analyses, nous avons pu conclure que la zone tempérée à la plus grande diversité autant au niveau de la richesse spécifique que de l’indice de Shannon et que la zone arctique est celle avec la plus petite diversité. Nous avons aussi conclu que la composition en espèces est très différente dans chaque zone due à la grande variation de la végétation et du climat entre les zones.**
 
 ## Introduction
 Avec les progrès récents en matière de télédétection et de modélisation écologique, plusieurs chercheurs en profitent pour modéliser la richesse spécifique à grande échelle en fonction des variables écologiques telles que la végétation et le climat. Dans un contexte où les changements climatiques évoluent rapidement, il est intéressant de savoir comment la richesse spécifique varie dans l’espace et savoir quelles espèces se trouvent dans chaque domaine bioclimatique soit la zone tempérée, la zone boréale et la zone arctique au Québec. C’est pourquoi nous avons choisi de travailler sur ce sujet et nous tenterons de répondre à la question suivante : comment la diversité des oiseaux varie selon le domaine bioclimatique au Québec?
@@ -26,7 +24,7 @@ Afin de mesurer la biodiversité aviaire du Québec et de la comparer entre les 
 
 Pour la richesse spécifique, les valeurs vont de 9 à 75 espèces. Le sud du Québec compte en moyenne plus d'espèces par site et plus on monte en latitude plus le nombre diminue. Le modèle linéaire estime une pente de -2,01. Il est également possible d'observer qu'il y a une plus forte variance pour la zone bioclimatique tempérée que les deux autres (Figure \ref{fig:plot1}).
 
-```{r figs 1, fig.cap="\\label{fig:plot1}Richesse spécifique aviaire observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
+```{r figs 1, fig.cap="\\label{fig:plot1}Richesse spécifique aviaire observés au Québec en fonction de la latitude", fig.width=5, fig.height=3, echo=FALSE}
 source("fig_rich_sp.R")
 data_rich_sp <- tar_read("res.rich.sp")
 fig.rich.sp(data_rich_sp)
@@ -34,7 +32,7 @@ fig.rich.sp(data_rich_sp)
 
 Une tendance similaire à celle précédente est observée pour l'indice de Shannon. En effet, il diminue plus la latitude augmente à un taux de 0,05. La variance est, elle aussi, plus forte dans la zone tempérée que dans les zones bioclimatiques plus nordiques. La valeur minimale de l'indice de Shannon est de 1,60 et le maximum est atteint à 3,95 (Figure \ref{fig:plot2}). 
 
-```{r figs 2, fig.cap="\\label{fig:plot2}Indice de Shannon des oiseaux observés au Québec en fonction de la latitude", fig.width=6, fig.height=4, echo=FALSE}
+```{r figs 2, fig.cap="\\label{fig:plot2}Indice de Shannon des oiseaux observés au Québec en fonction de la latitude", fig.width=5, fig.height=3, echo=FALSE}
 source("fig_shannon.R")
 data_shannon <- tar_read("indice.shannon")
 fig.shannon(data_shannon)
@@ -54,6 +52,5 @@ Pour évaluer la variation de la diversité aviaire dans le Québec, nous avons 
 Par la suite, nous nous sommes intéressés sur la composition en espèces de chaque domaine bioclimatique. Avec nos résultats, nous observons que la composition en espèce est très différente entre les différentes zones du Québec. Encore une fois, cela concorde avec la littérature. Il est normal que la composition en espèces diffère dans les différents domaines bioclimatiques sachant qu’il est peu probable que les espèces trouvées aux basses et hautes latitudes soient écologiquement équivalentes (@blackburn_spatial_1996). Les variables environnementales telles que la végétation et le climat diffèrent énormément entre le sud et le nord du Québec et les espèces sont adaptées à des niches spécifiques. Une espèce ne peut donc pas se retrouver à la fois dans le sud du Québec avec son climat plus chaud et des forêts de feuillus que dans le nord avec son climat plus froid et ses toundras. La répartition des espèces est donc fortement corrélée au climat, aux précipitations et à la température moyenne annuelle (@gaudreau_towards_2018).
  
 Pour conclure, la diversité aviaire varie bel et bien en fonction du domaine bioclimatique au Québec. En ordre croissant de diversité spécifique, on retrouve la zone arctique puis la zone boréale et finalement la zone tempérée. De plus, la composition en espèces est très différente entre les trois zones du Québec à cause des variables environnementales. À l’aide de ces informations et ainsi que des projections qui font varier les variables climatiques, il serait possible de projeter à quoi ressemblerait la diversité au Québec dans quelques années. Cela pour être utile pour voir l’impact que les changements climatiques auraient sur la répartition des espèces d’oiseaux au Québec qui sont maintenant inévitables.
-
 
 ## Références
