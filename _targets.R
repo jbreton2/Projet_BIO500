@@ -70,17 +70,17 @@ list(
   
   tar_target(     #Requêtes richesse spécifique
     name = res.rich.sp,   
-    command = table.rich.sp()
+    command = table.rich.sp(con)
   ),
   
   tar_target(     #Requêtes indice de Shannon
     name = indice.shannon,   
-    command = Shannon()
+    command = Shannon(con)
   ),
   
   tar_target(     #Requêtes abondance relative
     name = abondance.relative,   
-    command = table.abond.rel()
+    command = table.abond.rel(con)
   ),
   
   tar_render(     #Rapport
