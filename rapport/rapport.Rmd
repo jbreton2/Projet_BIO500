@@ -18,9 +18,9 @@ bibliography: "biblio.bib"
 
 ## Méthode
 
-Des relevés acoustiques des oiseaux ont été effectués de 2016 à 2019 sur des sites répartis partout au Québec. Dans le cadre de ce projet, nous comparons les trois grandes zones biogéographiques que l'on retrouve dans la province : la zone tempérée, la zone boréale et la zone arctique. La limite Nord de la zone tempérée à été fixer à une latitude de 48 et celle de la zone boréale à une valeur de 58. Ces démarcations ont été choisies à l'aide des zones de végétation du Ministère des ressources naturelles et des forêts (@noauthor_classification_nodate).
+Des relevés acoustiques des oiseaux ont été effectués de 2016 à 2019 sur des sites répartis partout au Québec. Dans le cadre de ce projet, nous comparons les trois grandes zones biogéographiques que l'on retrouve dans la province : la zone tempérée, la zone boréale et la zone arctique. La limite Nord de la zone tempérée a été fixée à une latitude de 48 et celle de la zone boréale à une valeur de 58. Ces démarcations ont été choisies à l'aide des zones de végétation du Ministère des ressources naturelles et des forêts (@noauthor_classification_nodate).
 
-Afin de mesurer la biodiversité aviaire du Québec et de la comparer entre les zones biogéographiques, la richesse spécifique de chaque site a été calculer. Ensuite, L'indice de Shannon, qui prend en compte le nombre d'observation de chaque espèce, a été calculer pour bonifier la description de la biodiversité. Pour les trois zones biogéographiques, les espèces les plus abondantes qui composent au moins 15% de la communauté sont extraite afin de comparer le type d'espèces que l'on retrouve dans les trois zones. 
+Afin de mesurer la biodiversité aviaire du Québec et de la comparer entre les zones biogéographiques, la richesse spécifique de chaque site a été calculée. Ensuite, L'indice de Shannon, qui prend en compte le nombre d'observations de chaque espèce, a été calculé pour bonifier la description de la biodiversité. Pour les trois zones biogéographiques, les espèces les plus abondantes qui composent au moins 15% de la communauté sont extraites afin de comparer le type d'espèces que l'on retrouve dans les trois zones. 
 
 ## Résulats
 
